@@ -1,15 +1,3 @@
-package com.ssafy.db.repository;
-
-import com.ssafy.db.entity.Foundation;
-import com.ssafy.db.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
-
-public interface FoundationRepository extends JpaRepository<Foundation, Long> {
-
-    Foundation findByFoundationSeq(int foundationSeq);
-
-    @Override
-    List<Foundation> findAll();
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:80c5f144ca25657751e4f88fd2a22d443d1ff707342ec06284ab700bd1f038df
+size 378
