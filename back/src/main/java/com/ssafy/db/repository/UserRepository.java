@@ -1,10 +1,3 @@
-package com.ssafy.db.repository;
-
-
-import com.ssafy.db.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findByUserSeq(int userSeq);
-    User findByUserId(String userId);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8cfa07ad0990c08e5d942179e9190368a8cce1a039e7bf4a3c6ebf9bdda6ae7e
+size 276
