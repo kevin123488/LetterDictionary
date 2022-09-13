@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b36f43130b7aa3ff5de6d973f607853f0a366f06435e64387f83d5b61d182e0
-size 420
+package com.ssafy.db.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+/**
+ * 모델 간 공통 사항 정의.
+ */
+@Getter
+@Setter
+@MappedSuperclass
+public class BaseEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id = null;
+}
