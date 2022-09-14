@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7e1bd53f9210ae84de8e8597e0de540a44bd3e6121d67a20120fddb27b2249b7
-size 481
+package com.ssafy.db.repository;
+
+import com.ssafy.db.entity.Board;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+/**
+ * 유저 모델 관련 디비 쿼리 생성을 위한 JPA Query Method 인터페이스 정의.
+ */
+@Repository
+public interface BoardRepository extends JpaRepository<Board, Long> {
+
+    Board findByBoardSeq(int boardSeq);
+    List<Board> findByBoardCode(int boarCode);
+
+}

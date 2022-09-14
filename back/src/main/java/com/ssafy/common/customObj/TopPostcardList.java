@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a5b042c91a275b53fe92fcd9b2a1fe777f1d9e7308d809314da346885ce21004
-size 195
+package com.ssafy.common.customObj;
+
+/**
+ * 상위 10개의 인기 엽서를 저장하는 객체 정의
+ */
+public interface TopPostcardList {
+    int getPostcard_Seq();
+    int getLike_Cnt();
+}
