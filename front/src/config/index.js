@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:232ed5a5c235d68c2bf53c3d61a850bd56e4840dbc7d6ded283c0c6c2e6a95e9
-size 104
+const API_BASE_URL = "http://localhost:8080"; // 일단 이 포트로 하겠음
+
+export { API_BASE_URL }
