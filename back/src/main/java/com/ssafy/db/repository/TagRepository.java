@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:217042d627a25551e464b0cfd06e08e3dc42be8cb33ebcbd22e65035214ad0e5
-size 441
+package com.ssafy.db.repository;
+
+import com.ssafy.db.entity.Tag;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+/**
+ * 엽서 태그 모델 관련 디비 쿼리 생성을 위한 JPA Query Method 인터페이스 정의.
+ */
+public interface TagRepository extends JpaRepository<Tag, Integer> {
+    void deleteTagsByPostcardSeq(int postcardSeq);
+
+    List<Tag> getTagsByPostcardSeq(int postcardSeq);
+
+}
