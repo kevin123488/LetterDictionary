@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:09224bedb2016cb943bdabf111b4c6ac43ba698b73db2df3b9dcf5df1764859b
-size 444
+package com.ssafy.common.customObj;
+
+import com.ssafy.db.entity.Postcard;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
+
+/**
+ * 태그 정보를 가지는 엽서 리스트를 저장하는 객체 정의
+ */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class PostcardList {
+    String userId;
+    Postcard postcard;
+    List<String> tag;
+}
