@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46e902e35c66f7e900e281ea878c070d63b01a842ee2708777129cd518e91833
-size 134
+// import { apiInstance } from "./index.js";
+// const api = apiInstance();
+
+// 검색부분 api docs 업데이트 되면 마저 작성
