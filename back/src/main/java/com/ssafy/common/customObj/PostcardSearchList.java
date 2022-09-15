@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3789c564dde90d064e754ee59876f79a933f72f9e472334300cae5ea70eefbe6
-size 195
+package com.ssafy.common.customObj;
+
+/**
+ * 검색어를 포함하는 태그를 가진 엽서를 저장하는 객체 정의
+ */
+public interface PostcardSearchList {
+    int getPostcard_Seq();
+}
