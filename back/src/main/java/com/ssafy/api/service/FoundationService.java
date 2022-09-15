@@ -1,17 +1,3 @@
-package com.ssafy.api.service;
-
-import com.ssafy.common.customObj.FoundationSearchList;
-import com.ssafy.db.entity.Foundation;
-import com.ssafy.db.entity.User;
-
-import java.io.IOException;
-import java.util.List;
-
-public interface FoundationService {
-
-    Foundation selectFoundation(int foundationSeq);
-
-    List<Foundation> selectFoundationList();
-
-    List<FoundationSearchList> selectFoundationSearchList(String searchWord) throws IOException;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:bccb142360d2e266e2e3f21759387f2e18db22748d8338c0c25a01647cfa83c8
+size 449
