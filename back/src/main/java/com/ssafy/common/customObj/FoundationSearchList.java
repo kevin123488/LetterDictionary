@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bfff66d29fd23eafb3e27aeb91546e9cf56d751d69ff3bad0c1f46890c3f249f
-size 305
+package com.ssafy.common.customObj;
+
+/**
+ * 검색어를 포함하는 이름을 가진 재단을 저장하는 객체 정의
+ */
+public interface FoundationSearchList {
+    int getFoundation_Seq();
+    String getFoundation_Name();
+    String getFoundation_Content();
+    String getFoundation_Logo_Url();
+}
