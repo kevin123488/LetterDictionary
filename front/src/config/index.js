@@ -1,3 +1,3 @@
-const API_BASE_URL = "http://localhost:8080"; // 일단 이 포트로 하겠음
-
-export { API_BASE_URL };
+version https://git-lfs.github.com/spec/v1
+oid sha256:85e27a0ae30d69779a3dba094205add15910429323e63d6667bd3af9125c5079
+size 159
