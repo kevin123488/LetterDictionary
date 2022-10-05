@@ -1,8 +1,3 @@
-.. _examples_gallery:
-
-Gallery
-=======
-
-General-purpose and introductory examples for NetworkX.
-The `tutorial <../tutorial.html>`_ introduces conventions and basic graph
-manipulations.
+version https://git-lfs.github.com/spec/v1
+oid sha256:e1f7057fc90ecb7fa547d32de4969b2d3ad1e42254f93c11d2aca4a7858968fb
+size 185
