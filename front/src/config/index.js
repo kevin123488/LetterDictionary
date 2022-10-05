@@ -1,4 +1,3 @@
-// const API_BASE_URL = "http://localhost:8080"; // 일단 이 포트로 하겠음
-const API_BASE_URL = "https://j7e101.p.ssafy.io";
-
-export { API_BASE_URL };
+version https://git-lfs.github.com/spec/v1
+oid sha256:30b8711abd5078dd02aa132254ceab5ae98365fe58c5be611305bf2950118cd9
+size 217
