@@ -1,15 +1,3 @@
-// ai변환 보내는 요청
-
-import { aiInstance } from "./index.js";
-const ai = aiInstance();
-
-
-async function sendTransform(transformInfo, success, fail) {
-  // 로그인
-  console.log('================================================================')
-  console.log(transformInfo.image.image)
-  await ai.post(`/ai/yeopseo/${transformInfo.filterCode}`, transformInfo.image.image).then(success).catch(fail);
-}
-
-
-export { sendTransform, };
+version https://git-lfs.github.com/spec/v1
+oid sha256:3cf1a3a36a2aa83264857791871a44da87aa6607f114af49909277641c6c6839
+size 447
