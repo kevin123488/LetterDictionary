@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9b408a3449fec266dff2eacf9ba00872673540170b82a0c9b92caf0a050bdb78
-size 391
+"""
+WSGI config for yeopseo project.
+
+It exposes the WSGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
+"""
+
+import os
+
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'yeopseo.settings')
+
+application = get_wsgi_application()

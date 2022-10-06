@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3df5e882f5cd87e3048da9ff14054859f0b1dcd57bcfbc33bed70690cb3a7ee9
-size 296
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import axios from "axios";
+
+
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
+
+createApp(App).use(store).use(router).mount("#app");

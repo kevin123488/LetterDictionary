@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd7b96304b38c9b0caa212b491edde0c043469cdb98b3939582c2d9417605b6d
-size 225
+// const API_BASE_URL = "http://localhost:8080"; // 일단 이 포트로 하겠음
+const API_BASE_URL = "https://j7e101.p.ssafy.io";
+const AI_BASE_URL = "http://j7e101.p.ssafy.io:8000";
+
+export { API_BASE_URL, AI_BASE_URL };
