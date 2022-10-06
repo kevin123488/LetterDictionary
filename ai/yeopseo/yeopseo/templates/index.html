@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:da0862f9f4b46f1cc7bccf0a1a8accbdede484aa47df6b3a4afd24d1804338dc
-size 319
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>파일 저장하기</title>
+</head>
+<body>
+  <form method="POST" action="/ai/yeopseo/3" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input name="image" type="file">
+    <button type="submit">파일 저장</button>
+  </form>
+</body>
+</html>
