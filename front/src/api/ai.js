@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf0b5f7b2c311cf14aa8677fedb0a46279bc56a0fec8f021b37216711b4a3943
-size 441
+// ai변환 보내는 요청
+
+import { aiInstance } from "./index.js";
+const ai = aiInstance();
+
+
+async function sendTransform(transformInfo, success, fail) {
+  // 로그인
+  console.log('================================================================')
+  console.log(transformInfo.image.image)
+  await ai.post(`/ai/yeopseo/${transformInfo.filterCode}`, transformInfo.image.image).then(success).catch(fail);
+}
+
+
+export { sendTransform, };
