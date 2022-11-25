@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6109a13c696a85f56a739eca742ee4a2bbbe4a66cef258a6a7607b983fc5467
-size 1079
+package com.ssafy;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.filter.CharacterEncodingFilter;
+
+import java.nio.charset.StandardCharsets;
+
+@SpringBootApplication
+public class YeopseoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(YeopseoApplication.class, args);
+    }
+
+    @Bean
+    public HttpMessageConverter<String> responseBodyConverter() {
+        return new StringHttpMessageConverter(StandardCharsets.UTF_8);
+    }
+
+    @Bean
+    public CharacterEncodingFilter characterEncodingFilter() {
+        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+        characterEncodingFilter.setEncoding("UTF-8");
+        characterEncodingFilter.setForceEncoding(true);
+        return characterEncodingFilter;
+    }
+}

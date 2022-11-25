@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5dd4f06b93c50323414baf8030e347c0071162a753ee3caf73da6556b7296982
-size 643
+package com.ssafy.db.repository;
+
+import com.ssafy.db.entity.PostcardLike;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+/**
+ * 엽서 좋아요 관련 디비 쿼리 생성을 위한 JPA Query Method 인터페이스 정의.
+ */
+public interface PostcardLikeRepository extends JpaRepository<PostcardLike, Integer> {
+    PostcardLike findPostcardLikeByPostcardSeqAndUserSeq(int postcardSeq, int userSeq);
+    void deletePostcardLikeByPostcardSeqAndUserSeq(int postcardSeq, int userSeq);
+    void deletePostcardLikesByPostcardSeq(int postcardSeq);
+
+    List<PostcardLike> findAllByUserSeq(int userSeq);
+}

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:339d16d63fce0622ac90d74f27777d046ca99afb508bcc32eaf8e1f87af6f699
-size 1216
+package com.ssafy.config;
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.servers.Server;
+import org.springframework.stereotype.Component;
+import springfox.documentation.oas.web.OpenApiTransformationContext;
+import springfox.documentation.oas.web.WebMvcOpenApiTransformationFilter;
+import springfox.documentation.spi.DocumentationType;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+
+@Component
+public class Workaround implements WebMvcOpenApiTransformationFilter {
+
+    @Override
+    public OpenAPI transform(OpenApiTransformationContext<HttpServletRequest> context) {
+
+        OpenAPI openApi = context.getSpecification();
+        Server localServer = new Server();
+        localServer.setDescription("local");
+        localServer.setUrl("http://localhost:8080");
+
+        Server testServer = new Server();
+        testServer.setDescription("test");
+        testServer.setUrl("https://j7e101.p.ssafy.io");
+        openApi.setServers(Arrays.asList(localServer, testServer));
+        return openApi;
+
+    }
+
+    @Override
+    public boolean supports(DocumentationType documentationType) {
+
+        return documentationType.equals(DocumentationType.OAS_30);
+    }
+}

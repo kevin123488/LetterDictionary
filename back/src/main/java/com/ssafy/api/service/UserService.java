@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0057f18e3ac5b85ff596f5fc707cd55d13c4494b449289553aab423c0a48f2a1
-size 719
+package com.ssafy.api.service;
+
+import com.ssafy.api.request.*;
+import com.ssafy.db.entity.User;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+
+public interface UserService {
+
+    User createUser(UserRegisterPostReq userRegisterInfo);
+
+    void deleteUser(int userSeq);
+
+    User updateUser(int userSeq, UserUpdatePostReq userUpdateInfo);
+
+    User updateUserProfile(int userSeq, MultipartFile profile) throws IOException;
+
+    User updateTemplate(int userSeq, UserUpdateTemplatePostReq userUpdateTemplateInfo);
+
+    User updateDonation(int userSeq, int userRemind, UserUpdateDonationPostReq donationSeq);
+
+    User selectUser(int userSeq);
+
+    User selectUser(String userId);
+}

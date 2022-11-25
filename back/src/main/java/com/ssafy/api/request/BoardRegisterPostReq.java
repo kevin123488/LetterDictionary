@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce869d59c78480a92a436f32dc1e1ed00151a002a4512058d3fce8aaebb95b44
-size 676
+package com.ssafy.api.request;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * 게시판 관리 API ([POST] /api/boards) 요청에 필요한 리퀘스트 바디 정의.
+ */
+@Getter
+@Setter
+@ApiModel("BoardRegisterPostRequest")
+public class BoardRegisterPostReq {
+
+	@ApiModelProperty(name="게시판 코드", example="201")
+	int boardCode;
+	@ApiModelProperty(name="User_seq", example="1")
+	int userSeq;
+	@ApiModelProperty(name="게시판 제목", example = "test_Title")
+	String boardTitle;
+	@ApiModelProperty(name="게시판 내용", example="test_Content")
+	String boardContent;
+
+}

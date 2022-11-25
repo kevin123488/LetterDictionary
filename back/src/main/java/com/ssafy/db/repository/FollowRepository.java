@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87eb578a4fb23c4844fe95e0bdad0d1b95c678f522579138f6944a51e4458caf
-size 525
+package com.ssafy.db.repository;
+
+import com.ssafy.db.entity.Follow;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+/**
+ * 팔로우 모델 관련 디비 쿼리 생성을 위한 JPA Query Method 인터페이스 정의.
+ */
+public interface FollowRepository extends JpaRepository<Follow, Integer> {
+    Follow findFollowByMyIdAndFollowId(String myId, String FollowId);
+    void deleteFollowByMyIdAndFollowId(String myId, String FollowId);
+    List<Follow> findAllByMyId(String myId);
+}

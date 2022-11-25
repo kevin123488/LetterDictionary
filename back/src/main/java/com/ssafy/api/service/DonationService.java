@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a466f0a6222ac136bc4a26b027f8c195a8211f86925cbd5c71c841408c3f539b
-size 522
+package com.ssafy.api.service;
+
+import com.ssafy.api.request.DonationRegisterPostReq;
+import com.ssafy.db.entity.Donation;
+
+import java.util.List;
+
+/**
+ *	유저 관련 비즈니스 로직 처리를 위한 서비스 인터페이스 정의.
+ */
+public interface DonationService {
+
+	Donation createDonation(DonationRegisterPostReq donationRegisterInfo);
+	Donation getDonationByDonationSeq(int donationSeq);
+	List<Donation> getDonationByUserSeq(int userSeq);
+	List<Donation> getDonationByFoundationSeq(int foundationSeq);
+
+}

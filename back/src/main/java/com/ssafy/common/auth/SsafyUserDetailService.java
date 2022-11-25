@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8572fc95259b1dfce59c0c2e3850e69667eba06d4123ac35fba79ee1b5986524
-size 895
+package com.ssafy.common.auth;
+
+import com.ssafy.api.service.UserService;
+import com.ssafy.db.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
+
+@Component
+public class SsafyUserDetailService implements UserDetailsService {
+
+    @Autowired
+    UserService userService;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userService.selectUser(username);
+        if(user != null) {
+            SsafyUserDetails userDetails = new SsafyUserDetails(user);
+            return userDetails;
+        }
+        return null;
+    }
+}

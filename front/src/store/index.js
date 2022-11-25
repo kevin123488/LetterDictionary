@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f43f79b8460dcd7cc3e91cfc5f5927a9a47a775ff764bbb4e43028dcb82e13f
-size 852
+import { createStore } from "vuex";
+import createPersistedState from "vuex-persistedstate";
+import mainpageStore from "./modules/mainpageStore";
+import searchStore from "./modules/searchStore";
+import accountStore from "./modules/accountStore";
+import mypageStore from "./modules/mypageStore";
+import organizationStore from "./modules/organizationStore";
+import donationStore from "./modules/donationStore";
+import boardStore from "./modules/boardStore";
+import postcardStore from "./modules/postcardStore";
+
+export default createStore({
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {},
+  modules: {
+    mainpageStore,
+    searchStore,
+    accountStore,
+    organizationStore,
+    donationStore,
+    mypageStore,
+    boardStore,
+    postcardStore,
+  },
+  plugins: [
+    createPersistedState({
+      storage: sessionStorage,
+    }),
+  ],
+});

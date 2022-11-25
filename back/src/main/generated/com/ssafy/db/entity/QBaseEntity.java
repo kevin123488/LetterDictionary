@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c84d86ca05547550f40771f01d70dd6c0bc3c1d415d295ed25b4be9a3063dba0
-size 969
+package com.ssafy.db.entity;
+
+import static com.querydsl.core.types.PathMetadataFactory.*;
+
+import com.querydsl.core.types.dsl.*;
+
+import com.querydsl.core.types.PathMetadata;
+import javax.annotation.Generated;
+import com.querydsl.core.types.Path;
+
+
+/**
+ * QBaseEntity is a Querydsl query type for BaseEntity
+ */
+@Generated("com.querydsl.codegen.SupertypeSerializer")
+public class QBaseEntity extends EntityPathBase<BaseEntity> {
+
+    private static final long serialVersionUID = 1717725014L;
+
+    public static final QBaseEntity baseEntity = new QBaseEntity("baseEntity");
+
+    public final NumberPath<Long> id = createNumber("id", Long.class);
+
+    public QBaseEntity(String variable) {
+        super(BaseEntity.class, forVariable(variable));
+    }
+
+    public QBaseEntity(Path<? extends BaseEntity> path) {
+        super(path.getType(), path.getMetadata());
+    }
+
+    public QBaseEntity(PathMetadata metadata) {
+        super(BaseEntity.class, metadata);
+    }
+
+}
+

@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8e58c312a77120e3f10fa81a7208f7541c2978c170ff15f441737801140baf5
-size 703
+package com.ssafy.db.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+@Getter
+@Setter
+@Table(name="foundation")
+public class Foundation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int foundationSeq;
+
+    String foundationName;
+    String foundationContent;
+    String foundationLogoUrl;
+
+    @CreationTimestamp
+    @Column(name = "REG_DTM", nullable = false)
+    private LocalDateTime REG_DTM;
+
+    @UpdateTimestamp
+    @Column(name = "MOD_DTM", nullable = true)
+    private LocalDateTime MOD_DTM;
+}

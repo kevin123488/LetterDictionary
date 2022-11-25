@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:062e3bbe3099b8e8892a1f946e18ede4fc00553fec0a301d18af7fd1c612b557
-size 631
+package com.ssafy.db.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "donation")
+public class Donation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int donationSeq;
+
+    int foundationSeq;
+    int userSeq;
+    String donationImgUrl;
+    String donationText;
+    int donationPay;
+
+    @CreationTimestamp
+    private LocalDateTime REG_DTM;
+
+    @UpdateTimestamp
+    private LocalDateTime MOD_DTM;
+
+}
